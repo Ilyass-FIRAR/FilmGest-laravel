@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Film;
@@ -49,7 +48,7 @@ class FilmController extends Controller
         $film->title = $request->title;
         $film->description = $request->description;
         $film->genre_id = $request->genre_id;
-        $film->poster = $path ?? null;
+        $film->poster = $path;
         $film->save();
 
         // ✅ Attach actors (many-to-many)
